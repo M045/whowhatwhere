@@ -1,0 +1,12 @@
+Who-What-Where
+
+*Requirements
+	-Node.js with NPM.
+	-Internet Connection.
+
+*How to install
+	-open source folder with node.js command promt (windows) or terminal (mac/linux) and run command 'npm install'
+		to install all the dependencies.
+
+*How to start
+	-run 3007 port on browser(http://localhost:3007).

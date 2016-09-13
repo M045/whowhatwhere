@@ -1,0 +1,80 @@
+.map-header {
+    background: #063642;
+    color: #EEE8D5;
+    width: 60%;
+    min-width: 230px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 20px 30px;
+}
+
+.map {
+    width: 70%;
+    height: 80%;
+    left: 29%;
+    top: 20%;
+    position: absolute;
+    border: solid 1px #0000ff;
+}
+
+.list-display {
+    background-color: #ffffff;
+    height: 25%;
+    width: 92%;
+    border-radius: 10px;
+    border: 1px solid #D2D6D5;
+    margin: 10px;
+    box-shadow: 0 5px 15px black;
+}
+
+.list-container {
+    width: 450px;
+    height: 780px;
+    overflow-y: scroll;
+    border-radius: 25px;
+    margin-top: 30px;
+}
+
+.business-image {
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+.business-name {
+    margin: 10px;
+    color: #004099;
+    font-weight: bold;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+}
+
+.location {
+    margin-left: 10px;
+    font-size: medium;
+}
+
+.rating {
+    width: 30px;
+    height: 30px;
+    background-color: #000066;
+    margin-top: 10px;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
+.phone {
+    font-size: medium;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #000066;
+}
+
+.info-window {
+    border: solid 1px #0000ff;
+    border-radius: 5px;
+}

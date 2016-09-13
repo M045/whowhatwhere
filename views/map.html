@@ -1,0 +1,52 @@
+<div class="map-header">
+    <h1 class="h1 text-center">Who What Where</h1>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 top-mar">
+            <input class="form-control" type="text" ng-model="location" placeholder="location"/>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 top-mar">
+            <a class="btn btn-info btn-md" ng-click="onButtonClick()">
+                <span class="glyphicon glyphicon-search"> Search</span>
+            </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 top-mar">
+            <a ui-sref="home" class="btn btn-info btn-md">
+                <span class="glyphicon glyphicon-home"> Home</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="list-container">
+    <div class="list-display" ng-repeat="list in dataList">
+        <div class="pull-right">
+            <img class="business-image" ng-src="{{list.image}}"/>
+
+            <div class="phone">&#x260E; {{list.phone}}</div>
+        </div>
+        <div class="rating pull-right">{{list.rating}}</div>
+        <div class="business-name">{{$index + 1}}. <a target="_blank" href="{{list.url}}">{{list.name}}</a></div>
+        <div class="location" ng-repeat="location in list.address track by $index">{{location}}</div>
+    </div>
+</div>
+
+<div map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyBhgiHUi6qXs_9MwVNfeidq_cUujnHrsrI">
+    <ng-map class="map" center="{{dataList[0].latitude}},{{dataList[0].longitude}}" zoom="15" default-style>
+        <info-window id="myInfoWindow">
+            <div class="info-window">
+                <a class="business-name" target="_blank" href="{{infoData.url}}">{{infoData.name}}</a>
+                <div class="location">{{infoData.address[0]+','+infoData.address[1]}}</div>
+                <div class="location">{{infoData.address[2]}}</div>
+                <div class="rating">{{infoData.rating}}</div>
+            </div>
+        </info-window>
+        <marker ng-repeat=" marker in dataList"
+                position="[{{marker.latitude}},{{marker.longitude}}]"
+                title="{{marker.name}}"
+                on-mouseover="showDetail(event,marker)">
+        </marker>
+    </ng-map>
+</div>
